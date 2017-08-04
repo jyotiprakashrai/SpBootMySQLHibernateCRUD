@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: SpBootMySQLHibernateCRUD
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Jyoti.Prakash
+Implementation-Vendor-Id: spboot.hbnate
+Build-Jdk: 1.8.0_144
+Implementation-URL: http://projects.spring.io/spring-boot/SpBootMySQLH
+ ibernateCRUD/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
