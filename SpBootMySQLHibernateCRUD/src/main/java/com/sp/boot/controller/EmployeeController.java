@@ -24,7 +24,14 @@ public class EmployeeController {
 	
 	@Autowired
 	EmployeeService empService;
+	
+	
 
+	/** Save Employee detail
+	 * 
+	 * @param employee
+	 * @return
+	 */
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
 		empService.save(employee);
@@ -33,6 +40,11 @@ public class EmployeeController {
 	}
 
 
+	/** Update Employee detail
+	 * 
+	 * @param employee
+	 * @return
+	 */
 	@RequestMapping(method = RequestMethod.PUT)
 	public ResponseEntity<Void> updateEmployee(@RequestBody Employee employee) {
 		Employee existingEmp = empService.getById(employee.getId());
@@ -46,6 +58,11 @@ public class EmployeeController {
 	}
 
 
+	/** Get employee details of a given employee id
+	 * 
+	 * @param id
+	 * @return
+	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Employee> getEmployee(@PathVariable("id") Long id) {
 		Employee employee = empService.getById(id);
@@ -58,6 +75,10 @@ public class EmployeeController {
 	}
 
 
+	/** List of all Employees
+	 * 
+	 * @return
+	 */
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<List<Employee>> getAllEmployees() {
 		List<Employee> employees = empService.getAll();
@@ -72,6 +93,11 @@ public class EmployeeController {
 	}
 
 
+	/**  Delete employee details of a given employee id
+	 * 
+	 * @param id
+	 * @return
+	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Void> deleteEmployee(@PathVariable("id") Long id) {
 		Employee employee = empService.getById(id);
